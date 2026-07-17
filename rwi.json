@@ -1,0 +1,11 @@
+{
+  "is_work_mode_active": true,
+  "notify_on_start": false,
+  "update_time": 1,
+  "work_block": [
+    "test_application_name"
+  ],
+  "blocked": [
+    "test_application_name"
+  ]
+}

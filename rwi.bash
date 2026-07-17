@@ -1,0 +1,33 @@
+#!/bin/bash
+
+CONFIG="$HOME/.config/rwi.json"
+KEY="is_work_mode_active"
+
+case "$1" in
+    on)
+        VALUE=true
+    ;;
+    off)
+        VALUE=false
+    ;;
+    *)
+        echo "Usage: $0 on|off"
+        exit 1
+    ;;
+esac
+
+if [[ ! -f "$CONFIG" ]]; then
+    echo "$CONFIG not found"
+    exit 1
+fi
+
+jq ".$KEY = $VALUE" "$CONFIG" > "$CONFIG.tmp" && mv "$CONFIG.tmp" "$CONFIG"
+
+case "$1" in
+    on)
+        echo "Work mode enabled"
+    ;;
+    off)
+        echo "Work mode disabled"
+    ;;
+esac

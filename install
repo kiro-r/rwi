@@ -18,4 +18,4 @@ sudo cp -r ./rwi.service ~/.config/systemd/user/
 
 echo -e "RWI installed"
 
-rm -r ./rwi
+sudo rm -r ./rwi

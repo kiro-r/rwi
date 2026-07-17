@@ -1,6 +1,8 @@
 #!/bin/bash
 set -e
 
+cd ~/.cache/
+
 git clone "https://github.com/kiro-r/rwi"
 cd ./rwi
 
@@ -19,4 +21,4 @@ sudo cp -r ./rwi.service ~/.config/systemd/user/
 echo -e "RWI installed"
 
 cd ..
-sudo rm -r ./rwi
+sudo rm -r ~/.cache/rwi

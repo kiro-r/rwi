@@ -3,7 +3,12 @@ set -e
 
 cd ~/.cache/
 
-git clone "https://github.com/kiro-r/rwi"
+if [ -d "rwi/.git" ]; then
+    git -C rwi pull
+else
+    git clone https://github.com/kiro-r/rwi.git
+fi
+
 cd ./rwi
 
 mkdir -p ~/.config/hypr/custom/scripts
@@ -13,7 +18,7 @@ cp -r ./rwi.py ~/.config/hypr/custom/scripts/
 
 echo -e "\033[32mPlease edit ~/.config/rwi.json\033[0m"
 
-sudo cp -r ./rwi.bash /usr/bin/
+sudo cp -r ./rwi /usr/bin/
 sudo chmod +x /usr/bin/rwi.bash
 
 sudo cp -r ./rwi.service ~/.config/systemd/user/

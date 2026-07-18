@@ -11,7 +11,7 @@ case "$1" in
         VALUE=false
     ;;
     *)
-        echo "Usage: $0 on|off"
+        echo "Usage: rwi on|off"
         exit 1
     ;;
 esac

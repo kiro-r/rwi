@@ -4,7 +4,7 @@ set -e
 rm -f ~/.config/rwi.json
 rm -f ~/.config/hypr/custom/scripts/rwi.py
 
-sudo rm -f /usr/bin/rwi.bash
+sudo rm -f /usr/bin/rwi
 
 sudo rm -f ~/.config/systemd/user/rwi.service
 
